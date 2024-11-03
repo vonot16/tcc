@@ -10,6 +10,7 @@ datasets_name = []
 for (path, folders, files) in walk(original_dataset_dir):
     datasets_name = files
 
+datasets_name.remove('put_datasets_here.txt')
 
 for dataset in datasets_name:
     df = pd.read_csv(f"{original_dataset_dir}{dataset}", sep=',', header=0, index_col=None)
